@@ -108,6 +108,6 @@ exports.likeSauce = (req, res, next) => {
                 .catch((error) => { res.status(400).json({ error: error }); });
             break;
         default:
-            console.error('mauvaise requête');
+            res.status(400).json({ error: 'Paramètre like attendu : -1, 0 ou 1' })
     }
 }
